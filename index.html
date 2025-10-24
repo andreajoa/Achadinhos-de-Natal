@@ -16,7 +16,6 @@
         }
 
         :root {
-            /* Paleta Natalina Real */
             --christmas-red: #C41E3A;
             --dark-red: #8B1538;
             --christmas-green: #165B33;
@@ -37,7 +36,6 @@
             overflow-x: hidden;
         }
 
-        /* Neve Caindo */
         .snowflakes {
             position: fixed;
             top: -10px;
@@ -80,7 +78,6 @@
         .snowflake:nth-child(14) { left: 45%; animation-duration: 11s; animation-delay: 3s; font-size: 14px; }
         .snowflake:nth-child(15) { left: 55%; animation-duration: 16s; animation-delay: 1.5s; font-size: 13px; }
 
-        /* Estrelas Douradas */
         .stars {
             position: fixed;
             top: 0;
@@ -117,7 +114,6 @@
         .star:nth-child(9) { top: 80%; left: 85%; animation-delay: 2.3s; }
         .star:nth-child(10) { top: 40%; left: 90%; animation-delay: 1.2s; }
 
-        /* Container */
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -126,7 +122,6 @@
             z-index: 2;
         }
 
-        /* Loading Screen */
         .loader {
             position: fixed;
             inset: 0;
@@ -168,7 +163,6 @@
             100% { background-position: 200% center; }
         }
 
-        /* Header */
         .header {
             text-align: center;
             margin-bottom: 60px;
@@ -282,7 +276,6 @@
             50% { transform: translateY(-10px); }
         }
 
-        /* Seção Principal */
         .main-section {
             display: flex;
             flex-direction: column;
@@ -290,7 +283,6 @@
             margin-bottom: 60px;
         }
 
-        /* Card de Loja */
         .store-card {
             background: rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(15px);
@@ -335,7 +327,6 @@
             text-shadow: 0 2px 15px rgba(255, 215, 0, 0.6);
         }
 
-        /* Lista de Links */
         .links-grid {
             display: grid;
             gap: 15px;
@@ -390,6 +381,10 @@
             filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
         }
 
+        .link-text {
+            flex: 1;
+        }
+
         .link-number {
             font-family: 'Fredoka', cursive;
             font-size: 0.9rem;
@@ -402,7 +397,6 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
-        /* Seção de Confiança */
         .trust-section {
             margin-bottom: 60px;
         }
@@ -471,7 +465,6 @@
             color: var(--cream);
         }
 
-        /* Footer */
         .footer {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
@@ -529,7 +522,6 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
-        /* Responsividade */
         @media (max-width: 768px) {
             .container {
                 padding: 20px 15px;
@@ -563,9 +555,12 @@
                 padding: 14px 18px;
                 font-size: 0.95rem;
             }
+
+            .link-text {
+                font-size: 0.9rem;
+            }
         }
 
-        /* Acessibilidade */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
@@ -581,7 +576,6 @@
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
     <div class="loader" id="loader">
         <svg class="loader-tree" viewBox="0 0 100 120">
             <rect x="42" y="90" width="16" height="30" fill="#5D4037"/>
@@ -602,7 +596,6 @@
         <div class="loader-text">Preparando os achadinhos...</div>
     </div>
 
-    <!-- Neve Caindo -->
     <div class="snowflakes" aria-hidden="true">
         <div class="snowflake">❅</div>
         <div class="snowflake">❆</div>
@@ -621,7 +614,6 @@
         <div class="snowflake">❅</div>
     </div>
 
-    <!-- Estrelas Douradas -->
     <div class="stars" aria-hidden="true">
         <div class="star"></div>
         <div class="star"></div>
@@ -636,7 +628,6 @@
     </div>
 
     <div class="container">
-        <!-- Header -->
         <header class="header">
             <svg class="christmas-tree" viewBox="0 0 100 120">
                 <rect x="42" y="90" width="16" height="30" fill="#5D4037"/>
@@ -678,9 +669,7 @@
             <div class="scroll-hint">👇</div>
         </header>
 
-        <!-- Seção Principal -->
         <main class="main-section">
-            <!-- Card Amazon -->
             <section class="store-card">
                 <div class="store-header">
                     <div class="store-icon">🛒</div>
@@ -689,88 +678,87 @@
                 <div class="links-grid">
                     <a href="https://amzn.to/3IPTGuD" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#1</span>
                     </a>
                     <a href="https://amzn.to/3WN9GR6" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#2</span>
                     </a>
                     <a href="https://amzn.to/4nXOOCU" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#3</span>
                     </a>
                     <a href="https://amzn.to/48yo1bz" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#4</span>
                     </a>
                     <a href="https://amzn.to/4q9e4HM" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#5</span>
                     </a>
                     <a href="https://amzn.to/42EmtZF" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#6</span>
                     </a>
                     <a href="https://amzn.to/4gYVpdn" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#7</span>
                     </a>
                     <a href="https://amzn.to/4o6Hdl6" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#8</span>
                     </a>
                     <a href="https://amzn.to/48QymQ0" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#9</span>
                     </a>
                     <a href="https://amzn.to/48XcYZk" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#10</span>
                     </a>
                     <a href="https://amzn.to/4mNMVap" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#11</span>
                     </a>
                     <a href="https://amzn.to/42Z9Vfu" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#12</span>
                     </a>
                     <a href="https://amzn.to/4pX3yDr" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#13</span>
                     </a>
                     <a href="https://amzn.to/4mTED0G" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#14</span>
                     </a>
                     <a href="https://amzn.to/3IRV5kf" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#15</span>
                     </a>
                     <a href="https://amzn.to/4nG9MWN" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#16</span>
                     </a>
                 </div>
             </section>
 
-            <!-- Card Shopee -->
             <section class="store-card">
                 <div class="store-header">
                     <div class="store-icon">🛍️</div>
@@ -779,44 +767,163 @@
                 <div class="links-grid">
                     <a href="https://s.shopee.com.br/5fgEuCn4kg" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#1</span>
                     </a>
                     <a href="https://s.shopee.com.br/5pzf6OkrxM" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#2</span>
                     </a>
                     <a href="https://s.shopee.com.br/LeiYBhlPh" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#3</span>
                     </a>
                     <a href="https://s.shopee.com.br/4fnhi146HT" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#4</span>
                     </a>
                     <a href="https://s.shopee.com.br/9pVnqx32Q3" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#5</span>
                     </a>
                     <a href="https://s.shopee.com.br/40Y0tscSky" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#6</span>
                     </a>
                     <a href="https://s.shopee.com.br/5pzf4i5Hjg" class="product-link" target="_blank" rel="noopener">
                         <span class="link-icon">🎁</span>
-                        <span>Presente Especial</span>
+                        <span class="link-text">Presente Especial</span>
                         <span class="link-number">#7</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/9zpHKSUHBk" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">☕</span>
+                        <span class="link-text">Caneca Xícara Personalizada - Alfabeto Natal</span>
+                        <span class="link-number">#8</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/6psFPhX0CG" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🍽️</span>
+                        <span class="link-text">Toalha de Mesa Natal Redonda 1,40x1,40m</span>
+                        <span class="link-number">#9</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/50QbEdf6cY" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🛋️</span>
+                        <span class="link-text">Kit 4 Capas Almofada Natal Aveludado</span>
+                        <span class="link-number">#10</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/4fnkqAh8hU" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🎅</span>
+                        <span class="link-text">Prendedor Natalino Papai Noel ou Boneco de Neve</span>
+                        <span class="link-number">#11</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/2VjGN1C6Zw" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🎄</span>
+                        <span class="link-text">Árvore De Natal Premium Luxo 150cm 180cm 210cm</span>
+                        <span class="link-number">#12</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/3AyxARzurY" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🌿</span>
+                        <span class="link-text">Guirlanda de Natal 40cm Luxo + Gancho de Porta</span>
+                        <span class="link-number">#13</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/3fvDmQFkky" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🛋️</span>
+                        <span class="link-text">Almofada Baguete 30x50 Feliz Natal SUEDE</span>
+                        <span class="link-number">#14</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/1VqjCYGhnd" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">☕</span>
+                        <span class="link-text">Kit 4 Canecas Porcelana 250ml Feliz Natal</span>
+                        <span class="link-number">#15</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/9fCQvgZaJF" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">☕</span>
+                        <span class="link-text">Canecas de Natal Cerâmica Papai Noel</span>
+                        <span class="link-number">#16</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/7AV5xaF37R" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🛋️</span>
+                        <span class="link-text">Kit 4 Capas Almofadas Natal 45x45</span>
+                        <span class="link-number">#17</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/8V0TYiNjl7" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🚂</span>
+                        <span class="link-text">Kit Árvore Natal Pingente E Trem Enfeite Luxo</span>
+                        <span class="link-number">#18</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/2LPqDYTZS2" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🦌</span>
+                        <span class="link-text">Enfeite Rena Decorativa 15cm / 25cm / 35cm</span>
+                        <span class="link-number">#19</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/7V7wNAtXV9" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🎄</span>
+                        <span class="link-text">Árvore Natal Madeira Mesa Pingente Premium</span>
+                        <span class="link-number">#20</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/40Y4CrPxwx" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🎀</span>
+                        <span class="link-text">Kit Almofadas Fita Vermelho Trancê Natalinas</span>
+                        <span class="link-number">#21</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/8Kh3MvxqGt" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🎅</span>
+                        <span class="link-text">Boneco Papai Noel com Balões 30cm Decoração</span>
+                        <span class="link-number">#22</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/10uYhdSl02" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🧶</span>
+                        <span class="link-text">Sousplat Jogo Americano Crochê Natalino</span>
+                        <span class="link-number">#23</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/9pVxE6T4Tl" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🛒</span>
+                        <span class="link-text">Carrinho Dobrável Multiuso Com Alça 47l</span>
+                        <span class="link-number">#24</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/4q7HGyg1Pt" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🧼</span>
+                        <span class="link-text">Kit Limpa Forno Estofados e Vidros</span>
+                        <span class="link-number">#25</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/qb8VpCT8m" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">👟</span>
+                        <span class="link-text">Saco de Lavagem de Sapatos Máquina de Lavar</span>
+                        <span class="link-number">#26</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/LervNgFu5" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🥾</span>
+                        <span class="link-text">Bota Natalina Decoração Meias Enfeite</span>
+                        <span class="link-number">#27</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/2g2mhqBGIA" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🧦</span>
+                        <span class="link-text">Kit 4 Botas Meias Enfeite Natal Temática</span>
+                        <span class="link-number">#28</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/7fRSfA2GQc" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">❄️</span>
+                        <span class="link-text">Enfeite Letras Vermelhas Floco De Neve</span>
+                        <span class="link-number">#29</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/40YAIWQzun" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🎄</span>
+                        <span class="link-text">Saia Para Árvore De Natal Vermelha Premium</span>
+                        <span class="link-number">#30</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/4fnr5t3E1J" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🚪</span>
+                        <span class="link-text">Capa de Porta Decoração Feliz Natal 2,10x0,85</span>
+                        <span class="link-number">#31</span>
                     </a>
                 </div>
             </section>
         </main>
 
-        <!-- Seção de Confiança -->
         <section class="trust-section">
             <div class="trust-card">
                 <div class="trust-content">
@@ -849,7 +956,6 @@
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="footer">
             <div class="footer-content">
                 <svg class="footer-tree" viewBox="0 0 100 120">
@@ -873,7 +979,6 @@
     </div>
 
     <script>
-        // Loading screen
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             setTimeout(() => {
@@ -885,7 +990,6 @@
             }, 1200);
         });
 
-        // Animação das cards
         function animateCards() {
             const cards = document.querySelectorAll('.store-card');
             cards.forEach((card, index) => {
@@ -900,7 +1004,6 @@
             });
         }
 
-        // Efeito de confetes dourados ao clicar nos links
         document.querySelectorAll('.product-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 createConfetti(link);
@@ -955,7 +1058,6 @@
             }
         }
 
-        // Touch feedback para mobile
         if ('ontouchstart' in window) {
             document.querySelectorAll('.product-link').forEach(link => {
                 link.addEventListener('touchstart', function() {
@@ -970,7 +1072,6 @@
             });
         }
 
-        // Efeito parallax suave no scroll
         let ticking = false;
         window.addEventListener('scroll', () => {
             if (!ticking) {
@@ -992,14 +1093,12 @@
             }
         });
 
-        // Acessibilidade de teclado
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' && document.activeElement.classList.contains('product-link')) {
                 createConfetti(document.activeElement);
             }
         });
 
-        // Log de sucesso
         console.log('🎄 Achadinhos de Natal - Carregado com sucesso! ✨');
         console.log('🎁 Landing page de afiliados pronta para conversão!');
     </script>
