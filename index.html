@@ -175,7 +175,7 @@
 
         .header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 30px;
             padding: 60px 30px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -291,6 +291,7 @@
             flex-direction: column;
             gap: 40px;
             margin-bottom: 60px;
+            min-height: auto;
         }
 
         .store-card {
@@ -304,6 +305,8 @@
                 inset 0 1px 0 rgba(255, 255, 255, 0.2),
                 0 0 40px rgba(212, 175, 55, 0.3);
             transition: all 0.4s ease;
+            opacity: 1;
+            transform: none;
         }
 
         .store-card:hover {
@@ -319,8 +322,8 @@
             border: 3px solid var(--bright-gold);
             position: relative;
             overflow: hidden;
-            opacity: 0;
-            transform: translateY(40px) scale(0.95);
+            opacity: 1;
+            transform: none;
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -1212,30 +1215,33 @@
         });
 
         function animateCards() {
-            const cards = document.querySelectorAll('.store-card');
+            const cards = document.querySelectorAll('.store-card:not(.featured-section)');
             cards.forEach((card, index) => {
+                // Start visible, just add subtle fade-in
                 card.style.opacity = '0';
-                card.style.transform = 'translateY(40px) scale(0.95)';
-                card.style.transition = `all 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.2}s`;                                                                
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.15}s`;                                                                
                 
                 setTimeout(() => {
                     card.style.opacity = '1';
-                    card.style.transform = 'translateY(0) scale(1)';
-                }, 100 + (index * 200));
+                    card.style.transform = 'translateY(0)';
+                }, 50 + (index * 150));
             });
 
-            // Enhanced animation for featured section
+            // Enhanced animation for featured section - subtle scale effect on scroll
             const featuredSection = document.querySelector('.featured-section');
             if (featuredSection && 'IntersectionObserver' in window) {
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0) scale(1)';
+                            entry.target.style.transform = 'scale(1.02)';
+                            setTimeout(() => {
+                                entry.target.style.transform = 'scale(1)';
+                            }, 300);
                             observer.unobserve(entry.target);
                         }
                     });
-                }, { threshold: 0.1 });
+                }, { threshold: 0.2 });
 
                 observer.observe(featuredSection);
             }
