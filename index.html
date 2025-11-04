@@ -27,13 +27,23 @@
             --brown: #5D4037;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Quicksand', sans-serif;
-            background: linear-gradient(180deg, #165B33 0%, #0d3b2e 50%, #8B1538 100%);
+            background: linear-gradient(180deg, #165B33 0%, #0d3b2e 50%, #8B1538 100%);                                                                         
             min-height: 100vh;
             color: var(--white);
             position: relative;
             overflow-x: hidden;
+        }
+
+        @supports (backdrop-filter: blur(10px)) {
+            body {
+                backdrop-filter: blur(0px);
+            }
         }
 
         .snowflakes {
@@ -304,6 +314,74 @@
                 0 0 60px rgba(212, 175, 55, 0.5);
         }
 
+        .featured-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(255, 215, 0, 0.1));
+            border: 3px solid var(--bright-gold);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .featured-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .featured-section .store-header {
+            position: relative;
+            z-index: 2;
+        }
+
+        .featured-section .store-title {
+            animation: glowPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                text-shadow: 0 2px 15px rgba(255, 215, 0, 0.6);
+            }
+            50% {
+                text-shadow: 0 2px 25px rgba(255, 215, 0, 0.9), 0 0 40px rgba(255, 215, 0, 0.5);
+            }
+        }
+
+        .featured-section .links-grid {
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-description {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            border: 2px dashed rgba(255, 215, 0, 0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-description p {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            color: var(--cream);
+            line-height: 1.7;
+            margin: 0;
+            font-weight: 500;
+        }
+
         .store-header {
             display: flex;
             align-items: center;
@@ -364,10 +442,16 @@
         }
 
         .product-link:hover {
-            transform: translateX(8px);
+            transform: translateX(8px) scale(1.02);
             border-color: var(--gold);
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.1));
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.1));                                                              
             box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .featured-section .product-link:hover {
+            border-color: var(--bright-gold);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(212, 175, 55, 0.15));
         }
 
         .product-link:active {
@@ -922,6 +1006,143 @@
                     </a>
                 </div>
             </section>
+
+            <section class="store-card featured-section">
+                <div class="store-header">
+                    <div class="store-icon">🍽️</div>
+                    <h2 class="store-title">PRATOS DECORATIVOS DE NATAL</h2>
+                </div>
+                <div class="section-description">
+                    <p>Transforme sua mesa de Natal com estes lindos pratos e acessórios decorativos em cerâmica! Perfeitos para criar uma atmosfera mágica e acolhedora. ✨</p>
+                </div>
+                <div class="links-grid">
+                    <a href="https://s.shopee.com.br/5AkGED7hdv" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🍽️</span>
+                        <span class="link-text">Kit Pratos Sweet Christmas Natal Cerâmica Alleanza - 24 Peças</span>
+                        <span class="link-number">#1</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/4LB9EswpB8" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">❄️</span>
+                        <span class="link-text">Novo Prato de Boneco de Neve de Natal Prato de Cerâmica Atmosfera Tigela de Sobremesa TMQH</span>
+                        <span class="link-number">#2</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/1gAO464521" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🥤</span>
+                        <span class="link-text">Taça Americana Sobremesa Natal Exclusive com tampa 1.250 ml - Taça Com Tampa</span>
+                        <span class="link-number">#3</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/qbH4kOsOU" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🍽️</span>
+                        <span class="link-text">Prato Petiscos Natal em Cerâmica 23cm</span>
+                        <span class="link-number">#4</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/7fRbDd8NlU" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🎂</span>
+                        <span class="link-text">Prato Para Panetone ou Bolo 23cm Em Cerâmica Noel Merry Christmas</span>
+                        <span class="link-number">#5</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/6AcnR5vAaY" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🍴</span>
+                        <span class="link-text">Conjunto com 6 Talheres de Natal</span>
+                        <span class="link-number">#6</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/5AkGFZdlbz" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🧂</span>
+                        <span class="link-text">Kit Saleiro e Pimenteiro Natalino 3D em Cerâmica – Papai Noel, Boneco de Neve + Bandeja</span>
+                        <span class="link-number">#7</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/5AkGFhnfLK" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🧻</span>
+                        <span class="link-text">Porta Guardanapo e Guardanapos de Papel Natal Papai Noel Merry Christmas Cerâmica Papel</span>
+                        <span class="link-number">#8</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/8pdYcibhy2" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🫖</span>
+                        <span class="link-text">Chaleira de Papai Noel de Cerâmica 15cm</span>
+                        <span class="link-number">#9</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/Lf0VGm1ag" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🥛</span>
+                        <span class="link-text">Jarra Leiteira Molheira Boneco Ginger Bread Louça Natalina 500ML 12CM 1 UN</span>
+                        <span class="link-number">#10</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/9fCfcc7ZrF" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🎂</span>
+                        <span class="link-text">Porta bolo para mesa posta;porta bolo natalino med 21x5x10.5</span>
+                        <span class="link-number">#11</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/6AcnSPWuk3" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🎄</span>
+                        <span class="link-text">Enfeite Árvore de Natal com Papai Noel Boneco de Neve e Luz LED 16cm Porcelana Decorativa</span>
+                        <span class="link-number">#12</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/7Kokqf7ye9" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🚂</span>
+                        <span class="link-text">Ornamento trenzinho natalino doces- Allmini</span>
+                        <span class="link-number">#13</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/6psafRSNOg" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🥣</span>
+                        <span class="link-text">KIT 2 TIGELAS CUMBUCAS BOWL EM CERAMICA LINHA ITÁLIA NATAL MESA POSTA COLORIDAS - 480ML</span>
+                        <span class="link-number">#14</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/3AzIIrtpGr" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🔔</span>
+                        <span class="link-text">Kit 2/3/4 Sinos Natalinos 13cm Cerâmica - Wincy Natal / Sino Papai Noel Decoração Mesa Jogo Conjunto</span>
+                        <span class="link-number">#15</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/9fCm2wwiTo" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🫙</span>
+                        <span class="link-text">Pote De Vidro com Tampa Bambu porta mantimentos 750ML cozinha Tampa Bambu porta tempero pote hermético</span>
+                        <span class="link-number">#16</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/10unjAUP9Z" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🫙</span>
+                        <span class="link-text">Kit 4 Potes Vidro Tampa De Bambu Ambar Porta Mantimentos Decor Louça Luxo Cozinha Decoração Tempero</span>
+                        <span class="link-number">#17</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/qbNXN4yyg" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🫙</span>
+                        <span class="link-text">Pote De Vidro Oval com Tampa e Colher de Bambu Hermético - 950ml</span>
+                        <span class="link-number">#18</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/5q03Ujlu7d" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🧂</span>
+                        <span class="link-text">Kit Saleiro e Paliteiro De Papai Noel Boneco de Neve Enfeite Mesa Posta Natalina</span>
+                        <span class="link-number">#19</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/6VFkI9Vig3" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🥣</span>
+                        <span class="link-text">Cumbuca Porcelana 450ml 1 Peças Bowl Tigelas Feliz Natal</span>
+                        <span class="link-number">#20</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/20nKw39D3s" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🍽️</span>
+                        <span class="link-text">Kit 6 Pratos de Sobremesa Natalinos 17,5cm Prato Guirlanda Feliz Natal Decorativos</span>
+                        <span class="link-number">#21</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/7pl7sqtmY1" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🎈</span>
+                        <span class="link-text">Bola Natal Mickey Arvore Disney 6un Enfeites Decoração Kit</span>
+                        <span class="link-number">#22</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/40YPJtsgSl" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">🎈</span>
+                        <span class="link-text">KIT 6UN Bola De Natal Decoração Disney Mickey Enfeite Luxo Enfeite Natalina Arvore Laço RoseLuxo Minnie</span>
+                        <span class="link-number">#23</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/6fZAUvJIma" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">✨</span>
+                        <span class="link-text">Bola de Natal 60 unidades Decoradas Estrela Bolinhas 5cm</span>
+                        <span class="link-number">#24</span>
+                    </a>
+                    <a href="https://s.shopee.com.br/BLgl4sp2I" class="product-link" target="_blank" rel="noopener">
+                        <span class="link-icon">✨</span>
+                        <span class="link-text">14 Bolas de Natal Premium Enfeite Decoração Vermelha e Branca</span>
+                        <span class="link-number">#25</span>
+                    </a>
+                </div>
+            </section>
         </main>
 
         <section class="trust-section">
@@ -995,13 +1216,29 @@
             cards.forEach((card, index) => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(40px) scale(0.95)';
-                card.style.transition = `all 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.2}s`;
+                card.style.transition = `all 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.2}s`;                                                                
                 
                 setTimeout(() => {
                     card.style.opacity = '1';
                     card.style.transform = 'translateY(0) scale(1)';
                 }, 100 + (index * 200));
             });
+
+            // Enhanced animation for featured section
+            const featuredSection = document.querySelector('.featured-section');
+            if (featuredSection && 'IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0) scale(1)';
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                observer.observe(featuredSection);
+            }
         }
 
         document.querySelectorAll('.product-link').forEach(link => {
